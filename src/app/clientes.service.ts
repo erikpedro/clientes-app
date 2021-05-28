@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http'
 import { Cliente } from './clientes/cliente';
+import { Observable } from 'rxjs';
 
 
 @Injectable({
@@ -13,6 +14,10 @@ export class ClientesService {
 
   }
 
+
+  salvar(cliente: Cliente) : Observable<Cliente> {
+    return this.http.post<Cliente>('http://localhost:8081/api/clientes', cliente);
+  }
 
   getCliente(): Cliente { 
     let cliente : Cliente = new Cliente

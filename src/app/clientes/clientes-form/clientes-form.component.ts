@@ -26,7 +26,13 @@ export class ClientesFormComponent implements OnInit {
    .subscribe( response => {
      console.log(response);
      this.success = true;
-   })
+     this.errors = [];
+     this.cliente = response;
+   } , errorResponse => {
+     this.success = false;
+       this.errors =  errorResponse.error.errors;
+   }
+   )
 
   }
 

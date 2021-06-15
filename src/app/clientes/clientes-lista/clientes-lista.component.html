@@ -3,6 +3,19 @@
     <ol class="breadcrumb mb-4">
         <li class="breadcrumb-item active">Consulta</li>
     </ol>
+
+    <div class="row">
+        <div class="col-md-12">
+            <div class="alert alert-success" role="alert" *ngIf="menssagemSucesso">
+                 {{ menssagemSucesso }}
+            </div>
+
+             <div class="alert alert-danger" role="alert" *ngIf="menssagemErro">
+                 {{ menssagemErro }}
+            </div>
+
+        </div>
+    </div>
   
         <div class="row">
             <div class="col-md-2">
@@ -38,7 +51,7 @@
                                         <i class="fa fa-edit"></i>
                                     </button>
 
-                                    <button class="class btn-danger ml-1">
+                                    <button class="class btn-danger ml-1" (click)="preparaDelecao(cliente)" data-toggle="modal" data-target="#exampleModal">
                                         <i class="fa fa-trash"></i>
                                     </button>
                                 </td>
@@ -49,5 +62,25 @@
                 </div>
             </div>
 
+
+            <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="exampleModalLabel">Deletar</h5>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <div class="modal-body" *ngIf="clienteSelecionado" >
+                      Confirma a deleçao Cliente {{ clienteSelecionado.nome }}
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                      <button type="button" class="btn btn-success" (click)="deletarCliente()" data-dismiss="modal">Confirmar</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
    
 </div>

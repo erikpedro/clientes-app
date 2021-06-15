@@ -36,6 +36,12 @@ export class ClientesService {
 
 
 
+  deletar(cliente: Cliente) : Observable<any> {
+    return this.http.delete<any>(`http://localhost:8081/api/clientes/${cliente.id}`);
+  }
+
+
+
 
 }
 

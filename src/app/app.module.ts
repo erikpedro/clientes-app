@@ -7,6 +7,7 @@ import {TempleteModule} from './templete/templete.module';
 import { HomeComponent } from './home/home.component'
 import { ClientesModule } from './clientes/clientes.module';
 import { ClientesService } from './clientes.service';
+import { ServicoPrestadoModule } from './servico-prestado/servico-prestado.module';
 
 
 @NgModule({
@@ -19,7 +20,8 @@ import { ClientesService } from './clientes.service';
     HttpClientModule,
     AppRoutingModule,
     TempleteModule,
-    ClientesModule
+    ClientesModule,
+    ServicoPrestadoModule
   ],
   providers: [
     ClientesService

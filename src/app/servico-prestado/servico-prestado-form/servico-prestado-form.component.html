@@ -8,6 +8,20 @@
 
         <div class="row">
             <div class="col-md-12">
+                <div class="alert alert-success" role="alert" *ngIf="success == true ">
+                     Serviço Prestado Salvo Com Sucesso!
+                </div>
+    
+                 <div class="alert alert-danger" role="alert" *ngFor="let erro of errors">
+                     {{ erro }}
+                </div>
+    
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col-md-12">
                 <div class="form-group">
                     <label>Cliente: </label>
                     <select class="form-control"
@@ -53,9 +67,18 @@
         </div>
     
         <div class="row">
-            <div class="col-md-3"><button type="submit" class="btn btn-success">
-                <i class="fa fa-save"></i>
-                Salvar</button></div>
+            <div class="col-md-3">
+                <button type="submit" class="btn btn-success">
+                  <i class="fa fa-save"></i>
+                    Salvar
+                </button>
+
+                <button type="button" routerLink="/servico-prestado-lista" class="btn btn-danger ml-1">
+                    <i class="fa fa-arrow-alt-circle-left"></i>
+                      Voltar
+                  </button>
+
+            </div>
             
         </div>
 
